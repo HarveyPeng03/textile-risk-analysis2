@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>紡織業製程風險分析 | 和泰產險</title>
+    
+    <!-- React 和 ReactDOM -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/18.2.0/umd/react.production.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.2.0/umd/react-dom.production.min.js"></script>
+    
+    <!-- 圖表庫 Recharts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/recharts/2.5.0/Recharts.min.js"></script>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- 自定義樣式 -->
+    <style>
+        .section {
+            margin-bottom: 3rem;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            background-color: white;
+        }
+        
+        .section-title {
+            color: #1e40af;
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+            font-size: 1.5rem;
+            text-align: center;
+            border-bottom: 2px solid #3b82f6;
+            padding-bottom: 0.5rem;
+        }
+        
+        .nav-link {
+            padding: 0.75rem 1rem;
+            border-radius: 0.5rem;
+            display: inline-block;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-link:hover {
+            background-color: #2563eb;
+            color: white;
+        }
+        
+        .nav-link.active {
+            background-color: #1d4ed8;
+            color: white;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+        
+        header {
+            background-color: #1e40af;
+            color: white;
+            padding: 1.5rem 0;
+            margin-bottom: 2rem;
+        }
+        
+        footer {
+            background-color: #1e3a8a;
+            color: white;
+            padding: 2rem 0;
+            margin-top: 3rem;
+            text-align: center;
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+    <header>
+        <div class="container">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center">
+                    <img src="https://placeholder.com/logo" alt="和泰產險" class="h-10 mr-4">
+                    <h1 class="text-2xl font-bold">紡織業製程風險分析</h1>
+                </div>
+                <div>
+                    <span class="text-sm opacity-75">損害防阻研討會 2025.05.07</span>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <div class="container">
+        <!-- 導航區 -->
+        <nav class="bg-white p-4 rounded-lg shadow-md mb-6">
+            <ul class="flex flex-wrap gap-2">
+                <li><a href="#overview" class="nav-link active" data-section="overview">總覽</a></li>
+                <li><a href="#incidents" class="nav-link" data-section="incidents">事故統計</a></li>
+                <li><a href="#risk-analysis" class="nav-link" data-section="risk-analysis">風險矩陣</a></li>
+                <li><a href="#case-studies" class="nav-link" data-section="case-studies">案例分析</a></li>
+                <li><a href="#visualizations" class="nav-link" data-section="visualizations">風險動態</a></li>
+                <li><a href="#controls" class="nav-link" data-section="controls">防護對策</a></li>
+            </ul>
+        </nav>
+        
+        <!-- 主要內容區 -->
+        <main>
+            <!-- 總覽區塊 -->
+            <section id="overview" class="section">
+                <h2 class="section-title">紡織業風險分析概覽</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <h3 class="text-lg font-semibold mb-2 text-blue-700">產業概況</h3>
+                        <p class="mb-4">紡織產業曾是台灣經濟起飛的重要推手，許多廠區佔地廣闊、設備機械繁雜，涵蓋紡紗、織布、染整等多元製程。由於各製程具有不同的作業特性與潛在危害，導致整體風險型態高度多元且複雜。</p>
+                        
+                        <h3 class="text-lg font-semibold mb-2 text-orange-700">關鍵風險點</h3>
+                        <ul class="list-disc pl-5 space-y-1">
+                            <li>棉花開鬆/清棉區：粉塵爆炸風險</li>
+                            <li>熱媒油系統：高溫油品洩漏與氣爆</li>
+                            <li>化學原料區：多種易燃液體與反應風險</li>
+                            <li>定型/烘乾設備：溶劑揮發與高溫引燃</li>
+                            <li>集塵系統：累積粉塵與火花引燃</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-semibold mb-2 text-green-700">防護策略方向</h3>
+                        <p class="mb-2">針對紡織業的多元風險結構，防護策略基於「預防-偵測-抑制-管理」四大核心原則設計：</p>
+                        <div class="grid grid-cols-2 gap-3 mt-4">
+                            <div class="bg-red-100 p-3 rounded">
+                                <h4 class="font-semibold text-red-700">預防</h4>
+                                <p class="text-sm">危害識別與風險評估</p>
+                                <p class="text-sm">製程安全管理</p>
+                            </div>
+                            <div class="bg-yellow-100 p-3 rounded">
+                                <h4 class="font-semibold text-yellow-700">偵測</h4>
+                                <p class="text-sm">早期火災及氣體偵測</p>
+                                <p class="text-sm">設備狀態監測</p>
+                            </div>
+                            <div class="bg-blue-100 p-3 rounded">
+                                <h4 class="font-semibold text-blue-700">抑制</h4>
+                                <p class="text-sm">自動滅火與爆炸抑制</p>
+                                <p class="text-sm">防火區劃與阻隔</p>
+                            </div>
+                            <div class="bg-green-100 p-3 rounded">
+                                <h4 class="font-semibold text-green-700">管理</h4>
+                                <p class="text-sm">標準操作程序</p>
+                                <p class="text-sm">訓練與緊急應變</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- 事故統計區塊 -->
+            <section id="incidents" class="section hidden">
+                <h2 class="section-title">紡織業火災事故統計</h2>
+                <div id="textile-fire-incidents-chart"></div>
+            </section>
+            
+            <!-- 風險矩陣區塊 -->
+            <section id="risk-analysis" class="section hidden">
+                <h2 class="section-title">紡織業風險矩陣與法規對照</h2>
+                <div id="comparative-risk-matrix"></div>
+            </section>
+            
+            <!-- 案例分析區塊 -->
+            <section id="case-studies" class="section hidden">
+                <h2 class="section-title">紡織業重大火災案例分析</h2>
+                <div id="textile-fire-case-studies"></div>
+            </section>
+            
+            <!-- 風險動態視覺化區塊 -->
+            <section id="visualizations" class="section hidden">
+                <h2 class="section-title">紡織業風險動態視覺化</h2>
+                <div id="risk-animations"></div>
+            </section>
+            
+            <!-- 防護對策區塊 -->
+            <section id="controls" class="section hidden">
+                <h2 class="section-title">紡織業火災風險防護對策</h2>
+                <div id="textile-control-measures"></div>
+            </section>
+        </main>
+    </div>
+    
+    <footer>
+        <div class="container">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-lg font-semibold mb-2">聯絡資訊</h3>
+                    <p>Email: Harvey.peng@hotains.com.tw</p>
+                    <p>電話: (02) XXXX-XXXX #123</p>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-2">參考標準</h3>
+                    <p>NFPA 652/654, FM DS 7-76, NFPA 30/34</p>
+                    <p>NFPA 86, FM DS 7-99, NFPA 69</p>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-2">相關資源</h3>
+                    <p>損害防阻技術指南</p>
+                    <p>紡織業火災風險評估工具</p>
+                </div>
+            </div>
+            <div class="mt-6 pt-4 border-t border-blue-800">
+                <p>&copy; 2025 和泰產險股份有限公司. 版權所有.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- 頁面交互 JavaScript -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // 初始化頁面顯示
+            document.getElementById('overview').classList.remove('hidden');
+            
+            // 標籤切換功能
+            const navLinks = document.querySelectorAll('.nav-link');
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    // 移除所有active類
+                    navLinks.forEach(l => l.classList.remove('active'));
+                    
+                    // 添加當前active類
+                    this.classList.add('active');
+                    
+                    // 隱藏所有區塊
+                    const sections = document.querySelectorAll('.section');
+                    sections.forEach(s => s.classList.add('hidden'));
+                    
+                    // 顯示目標區塊
+                    const targetSection = this.getAttribute('data-section');
+                    document.getElementById(targetSection).classList.remove('hidden');
+                });
+            });
+        });
+    </script>
+    
+    <!-- 組件引入 -->
+    <script src="js/textile-fire-incidents-chart.js"></script>
+    <script src="js/comparative-risk-matrix.js"></script>
+    <script src="js/textile-fire-case-studies.js"></script>
+    <script src="js/risk-animations.js"></script>
+    <script src="js/textile-control-measures.js"></script>
+</body>
+</html>
