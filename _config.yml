@@ -1,4 +1,0 @@
-exclude:
-  - node_modules
-  - textile-risk-analysis/node_modules
-  - "*/node_modules"
